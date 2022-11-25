@@ -1,24 +1,71 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| user_name          | string | null: false               |
+| email              | string | null: false ,unique: true |
+| encrypted_password | string | null: false               |
 
-* Ruby version
+### Association
+has_many :recipes
+has_many :follows
+has_many :favorites
 
-* System dependencies
+## recipes テーブル
 
-* Configuration
+| Column             | Type       | Options                       |
+| ------------------ | ---------- | ----------------------------- |
+| dish_name          | string     | null: false                   |
+| ingredient         | text       | null: false                   |
+| make               | text       | null: false                   |
+| introduction       | text       | null: false                   |
+| user               | references | null: false, foreign_key: true|
 
-* Database creation
+### Association
+belongs_to :user
+has_many :favorites
+has_many :recipe_categories
+has_many :categories, through: :recipe_categories
 
-* Database initialization
+## favorites テーブル
 
-* How to run the test suite
+| Column             | Type    |
+| ------------------ | ------- |
+| recipe_id          | integer |
+| user_id            | integer |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+belongs_to :user
+belongs_to :recipe
 
-* Deployment instructions
+## follows テーブル
 
-* ...
+| Column             | Type    |
+| ------------------ | ------- |
+| follower_id        | integer |
+| followee_id        | integer |
+
+### Association
+belongs_to :user
+
+## recipe_categories テーブル
+
+| Column             | Type    | Options     |
+| ------------------ | ------  | ----------- |
+| recipe_id          | integer | null: false |
+| category_id        | integer | null: false |
+
+### Association
+belongs_to :recipes
+belongs_to :category
+
+## categories テーブル
+| Column             | Type    | Options     |
+| ------------------ | ------  | ----------- |
+
+
+### Association
+has_many :recipe_categories
+has_many :recipes, through: :recipe_categories
