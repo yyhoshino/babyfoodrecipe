@@ -1,0 +1,10 @@
+.footer{
+  height: 60px;
+  background-color: #CCCCCC;
+}
+
+.fotter-logo{
+  display: block;
+  padding: 20px 0;
+  margin: auto;
+}
