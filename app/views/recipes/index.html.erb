@@ -2,15 +2,16 @@
 
 <div class="main-contents">
   <div class="articles">
-    <%# @articles.each do |article| %>
-      <div class="article" id=<%#= article.id%>>
+    <% @recipes.each do |recipe| %>
+    <%= image_tag recipe.image.variant(resize_to_fill: [400, 400]), class: "article-image" if recipe.image.attached? %>
+      <div class="article" id=<%= recipe.id%>>
         <div class="article-overview">
           <%#= link_to check_path(article) do %>
             <p class="article-title">
-              <%#= article.title%>
+              <%= recipe.dish_name%>
             </p>
             <p class="article-content">
-              <%#= article.content%>
+              <%= recipe.ingredient%>
             </p>
           <%# end %>
           <div class="article-information">
@@ -27,9 +28,8 @@
             </div>
           </div>
         </div>
-        <%#= image_tag article.image.variant(resize_to_fill: [400, 400]), class: "article-image" %>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 
   <div class="ranking">
