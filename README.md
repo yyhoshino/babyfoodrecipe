@@ -62,9 +62,16 @@ belongs_to :recipes
 belongs_to :category
 
 ## categories テーブル
-| Column             | Type    | Options     |
-| ------------------ | ------  | ----------- |
-
+| Column                | Type    | Options     |
+| --------------------- | ------  | ----------- |
+| vegetable_foliage_id  | integer | null: false |
+| root_vegetable        | integer | null: false |
+| other_vegetable_id    | integer | null: false |
+| fruit_id              | integer | null: false |
+| fish_id               | integer | null: false |
+| meat_id               | integer | null: false |
+| carbohydrate_id       | integer | null: false |
+| egg_dairy_id          | integer | null: false |
 
 ### Association
 has_many :recipe_categories
