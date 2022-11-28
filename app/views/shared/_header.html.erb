@@ -4,7 +4,7 @@
   </div>
   <div class="header-btn">
     <% if #current_user.admin%>
-      <%= link_to '記事を投稿する', "#", class:"post-article-btn"%>
+      <%= link_to '記事を投稿する', new_recipe_path, class:"post-article-btn"%>
     <% end %>
     <%= link_to 'ログアウト', "#", method: :delete, class:"logout-btn"%>
   </div>

@@ -79,23 +79,7 @@ a{
   display: flex;
 }
 
-.article-post-date{
-  width: 40%;
-  padding: 5px;
-  font-size: 13px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
-.article-about-time{
-  width: 35%;
-  padding: 5px;
-  font-size: 13px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 
 .article-check{
   width: 20%;

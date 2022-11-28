@@ -3,7 +3,6 @@
 <div class="main-contents">
   <div class="articles">
     <% @recipes.each do |recipe| %>
-    <%= image_tag recipe.image.variant(resize_to_fill: [400, 400]), class: "article-image" if recipe.image.attached? %>
       <div class="article" id=<%= recipe.id%>>
         <div class="article-overview">
           <%#= link_to check_path(article) do %>
@@ -11,17 +10,13 @@
               <%= recipe.dish_name%>
             </p>
             <p class="article-content">
-              <%= recipe.ingredient%>
+              <%= image_tag recipe.image.variant(resize_to_fill: [400, 400]), class: "article-image" if recipe.image.attached? %>
             </p>
           <%# end %>
           <div class="article-information">
-            <p class="article-post-date">
-              <%#= article.created_at.strftime("%Y年 %m月 %d日") %>
-            </p>
-            
             <div class="article-check">
               <%# if Check.where(user_id: current_user.id, article_id: article.id).exists? %>
-                <div class="article-check-button" data=<%#= article.id %>>
+                <div class="article-check-button" data=<%= recipe.id %>>
                   いいね！
                 </div>
               <%# end %>
