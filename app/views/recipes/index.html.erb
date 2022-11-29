@@ -4,24 +4,15 @@
   <div class="articles">
     <% @recipes.each do |recipe| %>
       <div class="article" id=<%= recipe.id%>>
+        <p class="article-content">
+          <%= image_tag recipe.image.variant(resize_to_fill: [500, 500]), class: "article-image" if recipe.image.attached? %>
+        </p>
         <div class="article-overview">
           <%#= link_to check_path(article) do %>
             <p class="article-title">
               <%= recipe.dish_name%>
             </p>
-            <p class="article-content">
-              <%= image_tag recipe.image.variant(resize_to_fill: [400, 400]), class: "article-image" if recipe.image.attached? %>
-            </p>
           <%# end %>
-          <div class="article-information">
-            <div class="article-check">
-              <%# if Check.where(user_id: current_user.id, article_id: article.id).exists? %>
-                <div class="article-check-button" data=<%= recipe.id %>>
-                  いいね！
-                </div>
-              <%# end %>
-            </div>
-          </div>
         </div>
       </div>
     <% end %>
@@ -29,7 +20,7 @@
 
   <div class="ranking">
     <p class="ranking-name">
-      週間ランキング
+      レシピ検索
     </p>
   </div>
 </div>
