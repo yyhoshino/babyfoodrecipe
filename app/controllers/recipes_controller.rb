@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:show, :destroy]
   def index
     @recipes = Recipe.order(id: 'DESC')
   end
@@ -8,7 +9,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to root_path
   end
 
   def create
@@ -29,4 +34,9 @@ class RecipesController < ApplicationController
       :introduction,
       :image)
   end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
 end
