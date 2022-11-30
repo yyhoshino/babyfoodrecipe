@@ -3,7 +3,7 @@
 .header{
   height: 80px;
   width: 100%;
-  background-color: #CCCCCC;
+  background-color: white;
   position: fixed;
   top:0;
 }
@@ -12,8 +12,13 @@
   height: 40px;
   width: 18%;
   position: absolute;
-  left: 5%;
-  top: 25%;
+  left: 4%;
+  top: -18%;
+}
+
+.header-icon{
+  width: 280px;
+  height: 110px;
 }
 
 .header-btn{
@@ -34,6 +39,7 @@
   border-radius: 10px;
   background: orange;
   margin-right: 4%;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .logout-btn{
@@ -43,13 +49,14 @@
   line-height: 35px;
   border-radius: 10px;
   color: white;
-  background: #040880;
+  background: orange;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .menu-bar{
   height: 40px;
   width: 100%;
-  background: #040880;
+  background: #d2691e;
   position: absolute;
   top: 100%;
 }

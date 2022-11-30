@@ -3,7 +3,7 @@
   <p class="show-article-title">
     <%= @recipe.dish_name %>
   </p>
-  <%= image_tag @recipe.image.variant(resize: '500x500'), class: "show-article-image" %>
+  <%= image_tag @recipe.image, class: "show-article-image" %>
   <p class="title">
       材料
   </p>
