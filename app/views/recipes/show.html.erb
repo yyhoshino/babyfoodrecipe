@@ -27,7 +27,7 @@
 <%# if current_user.admin == true %>
   <div class="change-article">
     <div class="edit-article">
-      <%#= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
+      <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
     </div>
     <div class="delete-article">
       <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
