@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class="main-contents">
+  <div class="articles">
+    <% @recipes.each do |recipe| %>
+      <div class="article" id=<%= recipe.id%>>
+        <%= link_to recipe_path(recipe) do %>
+        <p class="article-content">
+          <%= image_tag recipe.image.variant(resize_to_fill: [500, 500]), class: "article-image" if recipe.image.attached? %>
+        </p>
+        <div class="article-overview">
+            <p class="article-title">
+              <%= recipe.dish_name%>
+            </p>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="ranking">
+    <p class="ranking-name">
+      レシピ検索
+    </p>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

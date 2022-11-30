@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="91tGmLh_4JO06Icw1Hji" name="ページ1">
-        <mxGraphModel dx="380" dy="238" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="321" dy="397" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -84,7 +84,31 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="35" value="categories table" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
-                    <mxGeometry x="80" y="440" width="160" height="56" as="geometry"/>
+                    <mxGeometry x="20" y="440" width="280" height="186" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="vegetable_foliage_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="26" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="root_vegetable_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="46" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="other_vegetable_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="66" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="fruit_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="86" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="fish_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="106" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="meat_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="126" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="carbohydrate_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="146" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="egg_dairy_id(integer型,NOT NULL)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="35">
+                    <mxGeometry y="166" width="280" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" style="edgeStyle=none;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="21" target="33">
                     <mxGeometry relative="1" as="geometry"/>
