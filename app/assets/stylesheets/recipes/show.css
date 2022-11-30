@@ -11,8 +11,8 @@
   font-size: 40px;
   line-height: 70px;
   font-weight: bold;
-  border-bottom: solid 2px #040880;
   overflow: hidden;
+  text-align: center;
 }
 
 .show-article-post-date{
@@ -20,6 +20,7 @@
   padding: 5px;
   font-size: 18px;
   line-height: 30px;
+  text-align: center;
 }
 
 .show-article-image{
@@ -29,7 +30,11 @@
 }
 
 .show-article-content{
-  padding: 10px;
+  height: 40px;
+  padding: 5px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
 }
 
 .change-article{
@@ -88,4 +93,8 @@
   line-height: 80px;
   color: white;
   background-color: #040880;
+}
+
+.title{
+  text-align: center;
 }

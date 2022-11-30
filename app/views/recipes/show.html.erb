@@ -3,12 +3,24 @@
   <p class="show-article-title">
     <%= @recipe.dish_name %>
   </p>
-  <p class="show-article-post-date">
-    <%#= @article.created_at.strftime("%Y年 %m月 %d日") %>
-  </p>
   <%= image_tag @recipe.image.variant(resize: '500x500'), class: "show-article-image" %>
+  <p class="title">
+      材料
+  </p>
   <p class="show-article-content">
     <%= @recipe.ingredient %>
+  </p>
+  <p class="title">
+      レシピ
+  </p>
+  <p class="show-article-post-date">
+    <%= @recipe.make %>
+  </p>
+  <p class="title">
+      紹介文
+  </p>
+  <p class="show-article-post-date">
+    <%= @recipe.introduction %>
   </p>
 </div>
 

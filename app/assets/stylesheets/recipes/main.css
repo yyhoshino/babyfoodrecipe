@@ -29,6 +29,7 @@ a{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: bisque;
 }
 
 .article{
@@ -39,6 +40,7 @@ a{
   margin-right: 10px;
   display: block;
   justify-content:center; 
+  background-color: #EEEEEE;
 }
 
 .article-overview{
@@ -63,6 +65,7 @@ a{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  background-color: antiquewhite;
 }
 
 .article-image{
