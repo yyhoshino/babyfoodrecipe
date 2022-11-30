@@ -61,12 +61,14 @@
   font-size: 20px;
   line-height: 50px;
   background-color: orange;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .delete-article{
   height: 50px;
   width: 200px;
   margin-left: 10px;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .delete-btn{
@@ -84,6 +86,7 @@
   height: 80px;
   width: 300px;
   margin: 0 auto 40px;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .return-btn{
@@ -95,5 +98,5 @@
   font-size: 20px;
   line-height: 80px;
   color: white;
-  background-color: #040880;
+  background-color: orange;
 }

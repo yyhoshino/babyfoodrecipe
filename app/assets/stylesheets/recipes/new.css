@@ -49,3 +49,10 @@ span{
   width: 30%;
   margin-bottom: 30px;
 }
+P {
+  font-family: 'Zen Kurenaido', sans-serif;
+}
+
+::placeholder {
+  font-family: 'Zen Kurenaido', sans-serif;
+}
