@@ -3,16 +3,16 @@
 <div class="post-article-form">
   <%= form_with(model: @recipe, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
-    <p><%= f.label :dish_name, '記事名' %><span>（必須・20文字以内）</span></p>
-    <%= f.text_field :dish_name, class:"new-article-title", placeholder: "記事名" %>
-    <p><%= f.label :ingredient, '記事内容' %><span>（必須）</span></p>
-    <%= f.text_area :ingredient, class:"new-article-content", placeholder: "記事内容" %>
-    <p><%= f.label :image, 'アイキャッチ画像' %><span>（必須）</span></p>
+    <p><%= f.label :dish_name, '料理名' %><span>（必須）</span></p>
+    <%= f.text_field :dish_name, class:"new-article-title", placeholder: "料理名" %>
+    <p><%= f.label :ingredient, '材料' %><span>（必須）</span></p>
+    <%= f.text_area :ingredient, class:"new-article-content", placeholder: "材料" %>
+    <p><%= f.label :make, '作り方' %><span>（必須）</span></p>
+    <%= f.text_area :make, class:"new-article-content", placeholder: "作り方" %>
+    <p><%= f.label :introduction, '紹介文' %><span>（必須）</span></p>
+    <%= f.text_area :introduction, class:"new-article-content", placeholder: "紹介文" %>
+    <p><%= f.label :image, '離乳食画像' %><span>（必須）</span></p>
     <%= f.file_field :image, class:"new-article-image", id:"new-article-image" %>
-    <p><%= f.label :make, '記事内容' %><span>（必須）</span></p>
-    <%= f.text_area :make, class:"new-article-content", placeholder: "記事内容" %>
-    <p><%= f.label :introduction, '記事内容' %><span>（必須）</span></p>
-    <%= f.text_area :introduction, class:"new-article-content", placeholder: "記事内容" %>
     <%= f.submit "投稿", class:"new-article-submit_btn" %>
   <% end %>
 </div>
