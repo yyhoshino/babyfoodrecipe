@@ -43,7 +43,9 @@ class RecipesController < ApplicationController
       :ingredient,
       :make,
       :introduction,
-      :image)
+      :image).merge(
+        user_id: current_user.id
+      )
   end
 
   def set_recipe
