@@ -21,7 +21,15 @@
     <p class="search-name">
       レシピ検索
     </p>
-    <h3><%= link_to '商品検索', search_recipes_path%></h3>
+    <h3><%= link_to 'レシピ検索', search_recipes_path%></h3>
+    <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :dish_name_cont, 'レシピ名' %>
+      <br>
+      <%= f.text_field :dish_name_cont, placeholder: 'レシピ名' %>
+    </div>
+    <%= f.submit '検索' %>
+  <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>
