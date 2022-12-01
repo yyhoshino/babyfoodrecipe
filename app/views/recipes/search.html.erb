@@ -1,1 +1,23 @@
-あ
+<h3>検索ページ</h3>
+<h3><%= link_to 'トップページへ戻る', root_path%></h3>
+<div class='item-contents' id="detailed-search-result-wrapper">
+  <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :dish_name_cont, '商品名' %>
+      <br>
+      <%= f.text_field :dish_name_cont, placeholder: '商品名' %>
+    </div>
+    <%= f.submit '検索' %>
+  <% end %>
+  <ul class='item-lists' id="detailed-search-result">
+    <% @recipes.each do |recipe| %>
+      <li class='list'>
+        <div class="posted-content">
+          <%= image_tag recipe.image %><br>
+          <%= recipe.dish_name%><br>
+          <%= link_to '詳細', recipe_path(recipe.id)%>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
