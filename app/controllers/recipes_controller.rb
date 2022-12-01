@@ -38,6 +38,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def search
+    @q = Recipe.ransack(params[:q])
+    @recipes = @q.result
+  end
+
   private
   def recipe_params
     params.require(:recipe).permit(
