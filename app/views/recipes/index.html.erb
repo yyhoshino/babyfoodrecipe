@@ -1,15 +1,15 @@
 <%= render "shared/header" %>
 
 <div class="main-contents">
-  <div class="articles">
+  <div class="recipes">
     <% @recipes.each do |recipe| %>
-      <div class="article">
+      <div class="recipe">
         <%= link_to recipe_path(recipe) do %>
-        <p class="article-content">
-          <%= image_tag recipe.image, class: "article-image" if recipe.image.attached? %>
+        <p class="recipe-content">
+          <%= image_tag recipe.image, class: "recipe-image" if recipe.image.attached? %>
         </p>
-        <div class="article-overview">
-            <p class="article-title">
+        <div class="recipe-overview">
+            <p class="recipe-title">
               <%= recipe.dish_name%>
             </p>
         </div>
@@ -18,8 +18,8 @@
     <% end %>
   </div>
 
-  <div class="ranking">
-    <p class="ranking-name">
+  <div class="search">
+    <p class="search-name">
       レシピ検索
     </p>
   </div>
