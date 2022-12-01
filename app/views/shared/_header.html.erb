@@ -3,10 +3,14 @@
     <%= link_to image_tag("/images/linkedin_banner_image_1.png", class:"header-icon"), "/" %>
   </div>
   <div class="header-btn">
-    <% if #current_user.admin%>
+    <% if user_signed_in? %>
+      <%= link_to current_user.user_name, "#", class: "post-article-btn" %>
       <%= link_to 'レシピを投稿する', new_recipe_path, class:"post-article-btn"%>
-    <% end %>
-    <%= link_to 'ログアウト', "#", method: :delete, class:"logout-btn"%>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout-btn"%>
+    <% else %>
+      <%= link_to 'ログイン', new_user_session_path, class: "post-article-btn" %>
+      <%= link_to '新規登録', new_user_registration_path, class: "logout-btn" %>
+    <%end%>
   </div>
   <div class="menu-bar">
    
