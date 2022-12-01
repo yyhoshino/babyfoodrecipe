@@ -24,7 +24,7 @@
   </p>
 </div>
 
-<%# if current_user.admin == true %>
+<% if current_user == @recipe.user %>
   <div class="change-article">
     <div class="edit-article">
       <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
@@ -33,7 +33,7 @@
       <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
     </div>
   </div>
-<%# end %>
+<% end %>
 
 <div class="return-toppage">
   <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>

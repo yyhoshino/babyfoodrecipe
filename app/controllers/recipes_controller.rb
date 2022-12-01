@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_recipe, only: [:show, :destroy, :edit, :update]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
   def index
     @recipes = Recipe.order(id: 'DESC')
   end
@@ -52,4 +54,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @recipe.user
+  end
 end
