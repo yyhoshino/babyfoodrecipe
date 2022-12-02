@@ -1,23 +1,28 @@
-<h3>検索ページ</h3>
-<h3><%= link_to 'トップページへ戻る', root_path%></h3>
-<div class='item-contents' id="detailed-search-result-wrapper">
-  <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-      <%= f.label :dish_name_cont, '商品名' %>
-      <br>
-      <%= f.text_field :dish_name_cont, placeholder: '商品名' %>
-    </div>
-    <%= f.submit '検索' %>
-  <% end %>
-  <ul class='item-lists' id="detailed-search-result">
+<%= render "shared/header" %>
+<div class="main-contents">
+  <div class="recipes">
     <% @recipes.each do |recipe| %>
-      <li class='list'>
-        <div class="posted-content">
-          <%= image_tag recipe.image %><br>
-          <%= recipe.dish_name%><br>
-          <%= link_to '詳細', recipe_path(recipe.id)%>
-        </div>
-      </li>
+      <div class="recipe">
+        <%= link_to recipe_path(recipe) do %>
+         <p class="recipe-content">
+          <%= image_tag recipe.image, class: "recipe-image" if recipe.image.attached? %>
+         </p>
+        <% end %>
+         <p class="recipe-title">
+          <%= recipe.dish_name%>
+         </p>
+      </div>
     <% end %>
-  </ul>
+  </div>
+
+  <div class="search">
+    <p class="search-name"><%= link_to 'レシピ検索', search_recipes_path%></p>
+    <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-name">
+      <%= f.text_field :dish_name_cont, placeholder: 'レシピ名' %>
+      <%= f.submit '検索' %>
+    </div>
+  <% end %>
+  </div>
 </div>
+<%= render "shared/footer" %>

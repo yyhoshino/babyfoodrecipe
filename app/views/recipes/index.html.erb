@@ -8,11 +8,9 @@
           <%= image_tag recipe.image, class: "recipe-image" if recipe.image.attached? %>
          </p>
         <% end %>
-         <%# <div class="recipe-overview"> %>
-            <p class="recipe-title">
-              <%= recipe.dish_name%>
-            </p>
-         <%# </div> %>
+         <p class="recipe-title">
+          <%= recipe.dish_name%>
+         </p>
       </div>
     <% end %>
   </div>
