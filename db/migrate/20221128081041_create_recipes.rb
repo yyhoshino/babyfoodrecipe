@@ -6,6 +6,8 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.text        :make, null: false
       t.text        :introduction, null: false
       t.references  :user, null: false, foreign_key: true
+      t.integer     :moon_age_id, null: false
+      t.integer     :classification_id, null: false
       t.timestamps
     end
   end

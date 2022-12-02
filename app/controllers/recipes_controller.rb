@@ -50,8 +50,10 @@ class RecipesController < ApplicationController
       :ingredient,
       :make,
       :introduction,
-      :image).merge(
-        user_id: current_user.id
+      :image,
+      :moon_age_id,
+      :classification_id)
+      .merge(user_id: current_user.id
       )
   end
 

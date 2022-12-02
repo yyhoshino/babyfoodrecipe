@@ -56,3 +56,8 @@ P {
 ::placeholder {
   font-family: 'Zen Kurenaido', sans-serif;
 }
+
+.genre-select{
+  height: 30px;
+  width: 250px;
+}

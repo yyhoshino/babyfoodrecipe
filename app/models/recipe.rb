@@ -1,4 +1,7 @@
 class Recipe < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :moon_age
+  belongs_to :classification
   has_one_attached :image
   belongs_to :user
 
@@ -9,4 +12,10 @@ class Recipe < ApplicationRecord
     validates :introduction
     validates :user_id
   end
+
+  with_options numericality: { other_than: 1, message: "can't be blank"} do
+    validates :moon_age_id
+    validates :classification_id
+  end
+
 end

@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2022_11_28_081041) do
     t.text "make", null: false
     t.text "introduction", null: false
     t.bigint "user_id", null: false
+    t.integer "moon_age_id", null: false
+    t.integer "classification_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"

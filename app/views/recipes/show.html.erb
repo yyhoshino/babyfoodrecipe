@@ -3,6 +3,12 @@
   <p class="show-recipe-title">
     <%= @recipe.dish_name %>
   </p>
+  <p class="show-recipe-content2">
+    <%= @recipe.moon_age.name %>
+  </p>
+  <p class="show-recipe-content3">
+    <%= @recipe.classification.name %>
+  </p>
   <%= image_tag @recipe.image, class: "show-recipe-image" %>
   <p class="title">
       材料
