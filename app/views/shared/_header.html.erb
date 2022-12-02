@@ -5,7 +5,7 @@
   <div class="header-btn">
     <% if user_signed_in? %>
       <%= link_to current_user.user_name, "#", class: "post-article-btn" %>
-      <%= link_to 'レシピを投稿する', new_recipe_path, class:"post-article-btn"%>
+      <%= link_to '投稿する', new_recipe_path, class:"post-article-btn"%>
       <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"logout-btn"%>
     <% else %>
       <%= link_to 'ログイン', new_user_session_path, class: "post-article-btn" %>
@@ -13,6 +13,5 @@
     <%end%>
   </div>
   <div class="menu-bar">
-   
   </div>
 </div>

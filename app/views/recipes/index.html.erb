@@ -8,27 +8,22 @@
           <%= image_tag recipe.image, class: "recipe-image" if recipe.image.attached? %>
          </p>
         <% end %>
-         <div class="recipe-overview">
+         <%# <div class="recipe-overview"> %>
             <p class="recipe-title">
               <%= recipe.dish_name%>
             </p>
-         </div>
+         <%# </div> %>
       </div>
     <% end %>
   </div>
 
   <div class="search">
-    <p class="search-name">
-      レシピ検索
-    </p>
-    <h3><%= link_to 'レシピ検索', search_recipes_path%></h3>
+    <p class="search-name"><%= link_to 'レシピ検索', search_recipes_path%></p>
     <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
-    <div class="search-field">
-      <%= f.label :dish_name_cont, 'レシピ名' %>
-      <br>
+    <div class="search-name">
       <%= f.text_field :dish_name_cont, placeholder: 'レシピ名' %>
+      <%= f.submit '検索' %>
     </div>
-    <%= f.submit '検索' %>
   <% end %>
   </div>
 </div>

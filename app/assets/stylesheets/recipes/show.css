@@ -1,11 +1,11 @@
-.show-article{
+.show-recipe{
   width: 100%;
   padding: 30px 200px 0;
   margin-top: calc(80px + 40px);
   margin-bottom: 30px;
 }
 
-.show-article-title{
+.show-recipe-title{
   height: 80px;
   padding: 5px;
   font-size: 40px;
@@ -16,13 +16,13 @@
 }
 
 
-.show-article-image{
+.show-recipe-image{
   display: block;
   height: 400px;
   margin: 0 auto 30px;
 }
 
-.show-article-content{
+.show-recipe-content{
   height: 40px;
   padding: 5px;
   font-size: 18px;
@@ -40,13 +40,13 @@
   text-align: center;
 }
 
-.change-article{
+.change-recipe{
   display: flex;
   justify-content: center;
   margin: 0 auto 30px;
 }
 
-.edit-article{
+.edit-recipe{
   height: 50px;
   width: 200px;
   margin-right: 10px;
@@ -64,7 +64,7 @@
   font-family: 'Zen Kurenaido', sans-serif;
 }
 
-.delete-article{
+.delete-recipe{
   height: 50px;
   width: 200px;
   margin-left: 10px;

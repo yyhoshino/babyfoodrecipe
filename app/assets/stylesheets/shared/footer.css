@@ -1,11 +1,12 @@
 .footer{
-  height: 60px;
-  background-color: white;
+  height: 80px;
+  background-color: #d2691e;
 }
 
 .footer-logo{
   display: block;
-  height: 70px;
-  width: 120px;
-  margin: 0 auto;
+  height: 80px;
+  width: 150px;
+  margin: auto;
+  object-fit: cover;
 }

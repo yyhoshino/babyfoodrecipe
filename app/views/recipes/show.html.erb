@@ -1,41 +1,41 @@
 <%= render "shared/header" %>
-<div class="show-article">
-  <p class="show-article-title">
+<div class="show-recipe">
+  <p class="show-recipe-title">
     <%= @recipe.dish_name %>
   </p>
-  <%= image_tag @recipe.image, class: "show-article-image" %>
+  <%= image_tag @recipe.image, class: "show-recipe-image" %>
   <p class="title">
       材料
   </p>
-  <p class="show-article-content">
+  <p class="show-recipe-content">
     <%= @recipe.ingredient %>
   </p>
   <p class="title">
       レシピ
   </p>
-  <p class="show-article-content">
+  <p class="show-recipe-content">
      <%= @recipe.make %>
   </p>
   <p class="title">
       紹介文
   </p>
-  <p class="show-article-content">
+  <p class="show-recipe-content">
      <%= @recipe.introduction %>
   </p>
   <p class="title">
       投稿者
   </p>
-  <p class="show-article-content">
+  <p class="show-recipe-content">
      <%= @recipe.user.user_name %>
   </p>
 </div>
 
 <% if current_user == @recipe.user %>
-  <div class="change-article">
-    <div class="edit-article">
+  <div class="change-recipe">
+    <div class="edit-recipe">
       <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
     </div>
-    <div class="delete-article">
+    <div class="delete-recipe">
       <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
     </div>
   </div>
