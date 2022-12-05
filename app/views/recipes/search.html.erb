@@ -25,10 +25,10 @@
       <%= f.label :moon_age_id_or_classification_id_eq, 'カテゴリ' %>
     </div>
     <div class="search-name">
-      <%= f.collection_select(:moon_age_id_eq, MoonAge.all, :id, :name, {}, {class:"genre-select"}) %>
+      <%= f.collection_select(:moon_age_id_eq, MoonAge.where.not(id:1), :id, :name, {include_blank: "月齢を選ぶ"}, {class:"genre-select"}) %>
     </div>
     <div class="search-name">
-      <%= f.collection_select(:classification_id_eq, Classification.all, :id, :name, {}, {class:"genre-select"}) %>
+      <%= f.collection_select(:classification_id_eq, Classification.where.not(id:1), :id, :name, {include_blank: "分類を選ぶ"}, {class:"genre-select"}) %>
     </div>
     <div class="search-name">
       <%= f.submit '検索' %>

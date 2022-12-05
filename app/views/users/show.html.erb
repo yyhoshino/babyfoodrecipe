@@ -1,10 +1,10 @@
 <%= render "shared/header" %>
 <div class="main-contents">
-  <div class="recipes">
-    <p class="user-show-name">
-    <%= "#{@user.user_name}さんのレシピ" %>
-    </p>
-    <% @recipes.each do |recipe| %>
+  <div class="recipes1">
+      <p class="user-show-name">
+      <%= "#{@user.user_name}さんのレシピ" %>
+      </p>
+     <% @recipes.each do |recipe| %>
       <div class="recipe1">
         <%= link_to recipe_path(recipe) do %>
          <p class="recipe-content">
@@ -15,7 +15,7 @@
           <%= recipe.dish_name%>
          </p>
       </div>
-    <% end %>
+     <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>

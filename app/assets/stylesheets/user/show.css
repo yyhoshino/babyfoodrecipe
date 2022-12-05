@@ -1,8 +1,17 @@
+.recipes1{
+  width: 70%;
+  padding: 30px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .user-show-name {
   font-size: 25px;
   font-weight: bold;
   line-height: 30px;
-  position: absolute;
+  margin-right: auto;
+  background-color: aqua;
+  margin-bottom: auto;
 }
 
 .recipe1 {
