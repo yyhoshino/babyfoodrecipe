@@ -16,13 +16,24 @@
   </div>
 
   <div class="search">
-    <p class="search-name"><%= link_to 'レシピ検索', search_recipes_path%></p>
+   <p class="search-name"><%= link_to 'レシピ検索', search_recipes_path%></p>
     <%= search_form_for @q, url: search_recipes_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-name">
       <%= f.text_field :dish_name_cont, placeholder: 'レシピ名' %>
+    </div>
+    <div class="search-name">
+      <%= f.label :moon_age_id_or_classification_id_eq, 'カテゴリ' %>
+    </div>
+    <div class="search-name">
+      <%= f.collection_select(:moon_age_id_eq, MoonAge.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="search-name">
+      <%= f.collection_select(:classification_id_eq, Classification.all, :id, :name, {}, {class:"genre-select"}) %>
+    </div>
+    <div class="search-name">
       <%= f.submit '検索' %>
     </div>
-  <% end %>
+   <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>
