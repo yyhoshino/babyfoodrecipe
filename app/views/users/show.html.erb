@@ -1,9 +1,13 @@
 <%= render "shared/header" %>
 <div class="main-contents">
-  <div class="recipes1">
-      <p class="user-show-name">
+  <div>
+    <p class="user-show-name">
       <%= "#{@user.user_name}さんのレシピ" %>
-      </p>
+    </p>
+    <%= link_to 'トップベージへ', root_path, class:"root-btn"%>
+    <%= link_to 'トップベージへ', root_path, class:"root-btn"%>
+  </div>
+  <div class="recipes1">
      <% @recipes.each do |recipe| %>
       <div class="recipe1">
         <%= link_to recipe_path(recipe) do %>

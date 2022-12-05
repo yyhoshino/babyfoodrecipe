@@ -6,12 +6,12 @@
   justify-content: center;
 }
 .user-show-name {
+  padding-top: 200px;
   font-size: 25px;
   font-weight: bold;
   line-height: 30px;
-  margin-right: auto;
-  background-color: aqua;
-  margin-bottom: auto;
+  background-color: bisque;
+  display: block;
 }
 
 .recipe1 {
@@ -23,4 +23,14 @@
   margin-right: 10px;
   display: block;
   justify-content:center; 
+}
+
+.root-btn {
+  height: 35px;
+  width: auto;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 10px;
+  background: orange;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
