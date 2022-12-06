@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :recipes do
     collection do
       get 'search'
+      resource :favorites, only: [:create, :destroy]
     end
   end
   resources :users, only: :show
