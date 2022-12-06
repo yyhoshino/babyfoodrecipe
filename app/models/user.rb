@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :user_name, presence: true
   has_many :recipes
+  has_many :favorites, dependent: :destroy
 end
