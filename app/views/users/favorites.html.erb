@@ -2,14 +2,14 @@
 <div class="main-contents">
   <div>
     <p class="user-show-name">
-      <%= "#{@user.user_name}さんのレシピ" %>
+      <%= "#{@user.user_name}さんのお気に入り" %>
     </p>
     <%= link_to 'トップベージへ', root_path, class:"root-btn"%>
-    <%= link_to 'お気に入り記事', favorites_user_path(@user), class:"root-btn"%>
+    <%= link_to 'もどる', user_path(current_user), class:"root-btn"%>
   </div>
   <div class="recipes1">
-     <% @recipes.each do |recipe| %>
-      <div class="recipe1">
+     <% @favorite_recipes.each do |recipe|%>
+       <div class="recipe1">
         <%= link_to recipe_path(recipe) do %>
          <p class="recipe-content">
           <%= image_tag recipe.image, class: "recipe-image" if recipe.image.attached? %>
@@ -20,6 +20,6 @@
          </p>
       </div>
      <% end %>
-  </div>
+    </div>
 </div>
 <%= render "shared/footer" %>
