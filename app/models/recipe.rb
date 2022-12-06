@@ -14,4 +14,8 @@ class Recipe < ApplicationRecord
     validates :user_id
   end
 
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+ end
+
 end

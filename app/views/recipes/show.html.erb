@@ -10,6 +10,15 @@
     <%= @recipe.classification.name %>
   </p>
   <%= image_tag @recipe.image, class: "show-recipe-image" %>
+  <% if @recipe.favorited?(current_user) %>
+    <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"title" do %>
+        <span style="color:red;">❤︎</span><%= @recipe.favorites.count %>
+    <% end %>
+  <% else %>
+    <%= link_to recipe_favorites_path(@recipe), method: :post, class:"title" do %>
+        <span>❤︎</span><%= @recipe.favorites.count %>
+    <% end %>
+  <% end %>
   <p class="title">
       材料
   </p>
