@@ -1,63 +1,66 @@
 <%= render "shared/header" %>
-<div class="show-recipe">
-  <p class="show-recipe-title">
-    <%= @recipe.dish_name %>
-  </p>
-  <p class="show-recipe-content2">
-    <%= @recipe.moon_age.name %>
-  </p>
-  <p class="show-recipe-content3">
-    <%= @recipe.classification.name %>
-  </p>
-  <%= image_tag @recipe.image, class: "show-recipe-image" %>
-  <% if @recipe.favorited?(current_user) %>
-    <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"title" do %>
-        <span style="color:red;">❤︎</span><%= @recipe.favorites.count %>
-    <% end %>
-  <% else %>
-    <%= link_to recipe_favorites_path(@recipe), method: :post, class:"title" do %>
-        <span>❤︎</span><%= @recipe.favorites.count %>
-    <% end %>
-  <% end %>
-  <p class="title">
-      材料
-  </p>
-  <p class="show-recipe-content">
-    <%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %>
-  </p>
-  <p class="title">
-      レシピ
-  </p>
-  <p class="show-recipe-content">
-     <%= safe_join(@recipe.make.split("\n"),tag(:br)) %>
-  </p>
-  <p class="title">
-      紹介文
-  </p>
-  <p class="show-recipe-content">
-     <%= safe_join(@recipe.introduction.split("\n"),tag(:br)) %>
-  </p>
-  <p class="title">
-      投稿者
-  </p>
-  <p class="show-recipe-content">
-     <%= @recipe.user.user_name %>
-  </p>
-</div>
-
-<% if current_user == @recipe.user %>
-  <div class="change-recipe">
-    <div class="edit-recipe">
-      <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
+<div class=show-main>
+  <div class="show-recipe">
+    <p class="show-recipe-title">
+      <%= @recipe.dish_name %>
+    </p>
+    <p class="show-recipe-content2">
+      <%= @recipe.moon_age.name %>
+    </p>
+    <div class="show-recipe-content3">
+      <%= @recipe.classification.name %>
     </div>
-    <div class="delete-recipe">
-      <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
+    <%= image_tag @recipe.image, class: "show-recipe-image" %>
+    <% if user_signed_in? %>
+      <% if @recipe.favorited?(current_user) %>
+        <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"mark" do %>
+            <span style="color:red;">❤︎</span><%= @recipe.favorites.count %>
+        <% end %>
+      <% else %>
+        <%= link_to recipe_favorites_path(@recipe), method: :post, class:"mark" do %>
+            <span>❤︎</span><%= @recipe.favorites.count %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <div class="title">
+        材料
+    </div>
+    <div class="show-recipe-content">
+      <p class=content><%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %></p>
+    </div>
+    <div class="title">
+        レシピ
+    </div>
+    <div class="show-recipe-content">
+       <p class=content><%= safe_join(@recipe.make.split("\n"),tag(:br)) %></p>
+    </div>
+    <div class="title">
+        紹介文
+    </div>
+    <div class="show-recipe-content">
+       <p class=content><%= safe_join(@recipe.introduction.split("\n"),tag(:br)) %></p>
+    </div>
+    <div class="title">
+        投稿者
+    </div>
+    <div class="show-recipe-content">
+       <p class=content><%= @recipe.user.user_name %></p>
     </div>
   </div>
-<% end %>
 
-<div class="return-toppage">
-  <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>
+  <% if current_user == @recipe.user %>
+    <div class="change-recipe">
+      <div class="edit-recipe">
+        <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
+      </div>
+      <div class="delete-recipe">
+        <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="return-toppage">
+    <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>
+  </div>
 </div>
-
 <%= render "shared/footer" %>
