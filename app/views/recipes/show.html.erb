@@ -21,6 +21,10 @@
             <span>❤︎</span><%= @recipe.favorites.count %>
         <% end %>
       <% end %>
+      <% else %>
+      <%= link_to recipe_favorites_path(@recipe), method: :post, class:"mark" do %>
+            <span>❤︎</span><%= @recipe.favorites.count %>
+        <% end %>
     <% end %>
     <div class="title">
         材料
