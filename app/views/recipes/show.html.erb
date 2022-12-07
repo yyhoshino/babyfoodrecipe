@@ -23,19 +23,19 @@
       材料
   </p>
   <p class="show-recipe-content">
-    <%= @recipe.ingredient %>
+    <%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %>
   </p>
   <p class="title">
       レシピ
   </p>
   <p class="show-recipe-content">
-     <%= @recipe.make %>
+     <%= safe_join(@recipe.make.split("\n"),tag(:br)) %>
   </p>
   <p class="title">
       紹介文
   </p>
   <p class="show-recipe-content">
-     <%= @recipe.introduction %>
+     <%= safe_join(@recipe.introduction.split("\n"),tag(:br)) %>
   </p>
   <p class="title">
       投稿者
