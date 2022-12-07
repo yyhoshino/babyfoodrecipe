@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-
+<div class=show-main>
 <div class="post-article-form">
   <%= form_with(model: @recipe, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
@@ -13,8 +13,15 @@
     <%= f.text_area :introduction, class:"new-article-content", placeholder: "紹介文" %>
     <p><%= f.label :image, '離乳食画像' %><span>（必須）</span></p>
     <%= f.file_field :image, class:"new-article-image", id:"new-article-image" %>
-    <%= f.submit "投稿", class:"new-article-submit_btn" %>
+    <div class="change-recipe">
+      <div class="edit-recipe">
+        <%= f.submit "投稿", class:"edit-btn" %>
+      </div>
+      <div class="delete-recipe">
+        <%= link_to "もどる", recipe_path(@recipe[:id]), class:"delete-btn" %>
+      </div>  
+    </div>
   <% end %>
 </div>
-
+</div>
 <%= render "shared/footer" %>

@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-
+<div class=show-main>
 <div class="post-article-form">
   <%= form_with(model: @recipe, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
@@ -15,8 +15,10 @@
     <%= f.file_field :image, class:"new-article-image", id:"new-article-image" %>
     <%= f.collection_select(:moon_age_id, MoonAge.all, :id, :name, {}, {class:"genre-select"}) %>
     <%= f.collection_select(:classification_id, Classification.all, :id, :name, {}, {class:"genre-select"}) %>
-    <%= f.submit "投稿", class:"new-article-submit_btn" %>
+    <div class="return-toppage">
+    <%= f.submit "投稿", class:"return-btn" %>
+    </div>
   <% end %>
 </div>
-
+</div>
 <%= render "shared/footer" %>
