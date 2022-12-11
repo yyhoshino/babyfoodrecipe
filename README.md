@@ -10,7 +10,7 @@
 
 ### Association
 has_many :recipes
-has_many :favorites
+has_many :favorites, dependent: :destroy
 
 ## recipes テーブル
 
@@ -26,7 +26,7 @@ has_many :favorites
 
 ### Association
 belongs_to :user
-has_many :favorites
+has_many :favorites, dependent: :destroy
 
 ## favorites テーブル
 
