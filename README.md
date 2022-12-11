@@ -10,7 +10,6 @@
 
 ### Association
 has_many :recipes
-has_many :follows
 has_many :favorites
 
 ## recipes テーブル
@@ -22,12 +21,12 @@ has_many :favorites
 | make               | text       | null: false                   |
 | introduction       | text       | null: false                   |
 | user               | references | null: false, foreign_key: true|
+| moon_age_id        | integer    | null: false                   |
+| classification_id  | integer    | null: false                   |
 
 ### Association
 belongs_to :user
 has_many :favorites
-has_many :recipe_categories
-has_many :categories, through: :recipe_categories
 
 ## favorites テーブル
 
@@ -39,40 +38,3 @@ has_many :categories, through: :recipe_categories
 ### Association
 belongs_to :user
 belongs_to :recipe
-
-## follows テーブル
-
-| Column             | Type    |
-| ------------------ | ------- |
-| follower_id        | integer |
-| followee_id        | integer |
-
-### Association
-belongs_to :user
-
-## recipe_categories テーブル
-
-| Column             | Type    | Options     |
-| ------------------ | ------  | ----------- |
-| recipe_id          | integer | null: false |
-| category_id        | integer | null: false |
-
-### Association
-belongs_to :recipes
-belongs_to :category
-
-## categories テーブル
-| Column                | Type    | Options     |
-| --------------------- | ------  | ----------- |
-| vegetable_foliage_id  | integer | null: false |
-| root_vegetable        | integer | null: false |
-| other_vegetable_id    | integer | null: false |
-| fruit_id              | integer | null: false |
-| fish_id               | integer | null: false |
-| meat_id               | integer | null: false |
-| carbohydrate_id       | integer | null: false |
-| egg_dairy_id          | integer | null: false |
-
-### Association
-has_many :recipe_categories
-has_many :recipes, through: :recipe_categories
