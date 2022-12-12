@@ -145,7 +145,7 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 % yarn install
 
 # 工夫したポイント
-## シンプル見やすいデザイン
+## シンプルで見やすいデザイン
 ・見やすいアプリケーションを目指し、色合いは統一感を持たせ、シンプルなデザインにしました。
 [![Image from Gyazo](https://i.gyazo.com/503d1645ba8b126e9f3948b67ffb920e.jpg)](https://gyazo.com/503d1645ba8b126e9f3948b67ffb920e)
 一覧画面
