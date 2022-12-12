@@ -46,12 +46,13 @@ BabyFoodRecipe
 離乳食のレシピを投稿し、ユーザー同士で共有できる。
 
 # URL
+https://babyfoodrecipe-38595.onrender.com
 
 # テスト用アカウント
-Basic認証パスワード:
-Basic認証ID:
-メールアドレス:
-パスワード:
+Basic認証パスワード:2222
+Basic認証ID:admin
+メールアドレス:aaa@com
+パスワード:1a1a1a
 
 # 利用方法
 
@@ -137,6 +138,11 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 ・タスク管理
 
 # ローカルでの動作方法
+以下のコマンドを順に実行
+% git clone https://github.com/yyhoshino/babyfoodrecipe.git
+% cd babyfoodrecipe
+% bundlie install
+% yarn install
 
 # 工夫したポイント
 ## シンプル見やすいデザイン
