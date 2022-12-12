@@ -130,7 +130,7 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/c15a9e70d10f3a68dea0e7716a218d49.png)](https://gyazo.com/c15a9e70d10f3a68dea0e7716a218d49)
 
-#　開発環境
+# 開発環境
 ・フロントエンド
 ・バックエンド
 ・インフラ
