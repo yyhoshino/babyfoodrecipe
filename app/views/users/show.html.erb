@@ -5,7 +5,7 @@
       <%= "#{@user.user_name}さんのレシピ" %>
     </p>
     <%= link_to 'トップベージへ', root_path, class:"root-btn"%>
-    <%= link_to 'お気に入り記事', favorites_user_path(@user), class:"root-btn"%>
+    <%= link_to 'お気に入りレシピ', favorites_user_path(@user), class:"root-btn"%>
   </div>
   <div class="recipes1">
      <% @recipes.each do |recipe| %>
