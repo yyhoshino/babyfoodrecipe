@@ -12,6 +12,12 @@ class Recipe < ApplicationRecord
     validates :make
     validates :introduction
     validates :user_id
+    validates :image
+  end
+
+  with_options numericality: { other_than: 1, message: "can't be blank" } do
+    validates :moon_age_id
+    validates :classification_id
   end
 
   def favorited?(user)
