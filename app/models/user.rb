@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :user_name, presence: true
   has_many :recipes
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end
