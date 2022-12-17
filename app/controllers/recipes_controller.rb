@@ -11,6 +11,9 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @commnet = Comment.new #新規コメント用
+    @recipe = Recipe.find(params[:id])
+    @comments = @recipe.comments #コメント表示用投稿に関連づくコメントの取得
   end
 
   def edit
