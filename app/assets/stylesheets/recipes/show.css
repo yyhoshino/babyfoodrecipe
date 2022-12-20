@@ -1,3 +1,7 @@
+.show-wapper {
+  display: flex;
+  background-color: bisque;
+}
 .show-main {
   background-color: bisque;
   padding-bottom: 40px;
@@ -151,4 +155,9 @@
   line-height: 80px;
   color: white;
   background-color: orange;
+}
+
+.recipe-comments {
+  padding-top: 500px;
+  background-color: bisque;
 }

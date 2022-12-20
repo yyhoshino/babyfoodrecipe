@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+<div class=show-wapper>
 <div class=show-main>
   <div class="show-recipe">
     <p class="show-recipe-title">
@@ -10,7 +11,7 @@
     <div class="show-recipe-content3">
       <%= @recipe.classification.name %>
     </div>
-    <%= image_tag @recipe.image, class: "show-recipe-image" %>
+    <%= image_tag @recipe.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0"), class: "show-recipe-image" %>
     <% if user_signed_in? %>
       <% if @recipe.favorited?(current_user) %>
         <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"mark" do %>
@@ -52,10 +53,15 @@
     </div>
   </div>
 
-  <div class="recipe-comments">
+  
+  
+</div>
+<div class="recipe-comments">
     <% @comments.each do |comment| %>
+    <li class="comments_list">
       <%= comment.content %>
       <%= comment.user.user_name %>
+      </li>
     <% end %>
     <%= form_with model: [@recipe, @comment], local: true do |f| %>
     <div class = 'form-group'>
@@ -63,8 +69,7 @@
     </div>
       <%= f.submit "コメントする", class: "btn btn-primary" %>
     <% end %>
-  </div>
-  <% if current_user == @recipe.user %>
+    <% if current_user == @recipe.user %>
     <div class="change-recipe">
       <div class="edit-recipe">
         <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
@@ -79,5 +84,5 @@
     <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>
   </div>
 </div>
-
+</div>
 <%= render "shared/footer" %>
