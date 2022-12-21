@@ -1,88 +1,86 @@
 <%= render "shared/header" %>
-<div class=show-wapper>
-<div class=show-main>
-  <div class="show-recipe">
-    <p class="show-recipe-title">
-      <%= @recipe.dish_name %>
-    </p>
-    <p class="show-recipe-content2">
-      <%= @recipe.moon_age.name %>
-    </p>
-    <div class="show-recipe-content3">
-      <%= @recipe.classification.name %>
-    </div>
-    <%= image_tag @recipe.image.variant(gravity: :center, resize:"640x640^", crop:"640x640+0+0"), class: "show-recipe-image" %>
-    <% if user_signed_in? %>
-      <% if @recipe.favorited?(current_user) %>
-        <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"mark" do %>
-            <span style="color:red;">❤︎</span><%= @recipe.favorites.count %>
+<div class="show-wapper" >
+  <div class=show-main>
+    <div class="show-recipe">
+      <p class="show-recipe-title">
+        <%= @recipe.dish_name %>
+      </p>
+      <p class="show-recipe-content2">
+        <%= @recipe.moon_age.name %>
+      </p>
+      <div class="show-recipe-content3">
+        <%= @recipe.classification.name %>
+      </div>
+      <%= image_tag @recipe.image, class: "show-recipe-image" %>
+      <% if user_signed_in? %>
+        <% if @recipe.favorited?(current_user) %>
+          <%= link_to recipe_favorites_path(@recipe), method: :delete, class:"mark" do %>
+              <span style="color:red;">❤︎</span><%= @recipe.favorites.count %>
+          <% end %>
+        <% else %>
+          <%= link_to recipe_favorites_path(@recipe), method: :post, class:"mark" do %>
+              <span>❤︎</span><%= @recipe.favorites.count %>
+          <% end %>
         <% end %>
-      <% else %>
+        <% else %>
         <%= link_to recipe_favorites_path(@recipe), method: :post, class:"mark" do %>
-            <span>❤︎</span><%= @recipe.favorites.count %>
-        <% end %>
+              <span>❤︎</span><%= @recipe.favorites.count %>
+          <% end %>
       <% end %>
-      <% else %>
-      <%= link_to recipe_favorites_path(@recipe), method: :post, class:"mark" do %>
-            <span>❤︎</span><%= @recipe.favorites.count %>
-        <% end %>
-    <% end %>
-    <div class="title">
-        材料
+      <div class="title">
+          材料
+      </div>
+      <div class="show-recipe-content">
+        <p class=content><%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %></p>
+      </div>
+      <div class="title">
+          レシピ
+      </div>
+      <div class="show-recipe-content">
+         <p class=content><%= safe_join(@recipe.make.split("\n"),tag(:br)) %></p>
+      </div>
+      <div class="title">
+          紹介文
+      </div>
+      <div class="show-recipe-content">
+         <p class=content><%= safe_join(@recipe.introduction.split("\n"),tag(:br)) %></p>
+      </div>
+      <div class="title">
+          投稿者
+      </div>
+      <div class="show-recipe-content">
+         <p class=content><%= @recipe.user.user_name %></p>
+      </div>
     </div>
-    <div class="show-recipe-content">
-      <p class=content><%= safe_join(@recipe.ingredient.split("\n"),tag(:br)) %></p>
-    </div>
-    <div class="title">
-        レシピ
-    </div>
-    <div class="show-recipe-content">
-       <p class=content><%= safe_join(@recipe.make.split("\n"),tag(:br)) %></p>
-    </div>
-    <div class="title">
-        紹介文
-    </div>
-    <div class="show-recipe-content">
-       <p class=content><%= safe_join(@recipe.introduction.split("\n"),tag(:br)) %></p>
-    </div>
-    <div class="title">
-        投稿者
-    </div>
-    <div class="show-recipe-content">
-       <p class=content><%= @recipe.user.user_name %></p>
-    </div>
-  </div>
-
-  
-  
-</div>
-<div class="recipe-comments">
-    <% @comments.each do |comment| %>
-    <li class="comments_list">
-      <%= comment.content %>
-      <%= comment.user.user_name %>
-      </li>
-    <% end %>
-    <%= form_with model: [@recipe, @comment], local: true do |f| %>
-    <div class = 'form-group'>
-      <%= f.text_area :content, class: "form-control", id:"comment_content", placeholder: "コメントを記入してください" %>
-    </div>
-      <%= f.submit "コメントする", class: "btn btn-primary" %>
-    <% end %>
     <% if current_user == @recipe.user %>
-    <div class="change-recipe">
-      <div class="edit-recipe">
-        <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
+      <div class="change-recipe">
+        <div class="edit-recipe">
+          <%= link_to "編集", edit_recipe_path(@recipe), class:"edit-btn" %>
+        </div>
+        <div class="delete-recipe">
+          <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
+        </div>
       </div>
-      <div class="delete-recipe">
-        <%= link_to "削除", recipe_path(@recipe), method: :delete, class:"delete-btn" %>
-      </div>
+    <% end %>
+    <div class="return-toppage">
+      <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>
     </div>
-  <% end %>
-
-  <div class="return-toppage">
-    <%= link_to "トップページへ戻る", root_path, class:"return-btn" %>
   </div>
-</div>
+  <div class="recipe-comments">
+      <% @comments.each do |comment| %>
+      <div class="comments_list">
+        <div class="comments-title">
+        <%= comment.user.user_name %>さんの投稿
+        </div>
+        <%= comment.content %>
+      </div>
+      <% end %>
+      <%= form_with model: [@recipe, @comment], local: true do |f| %>
+      <div class = 'form-group'>
+        <%= f.text_area :content, class: "form-control", id:"comment_content", placeholder: "コメントを記入してください" %>
+      </div>
+        <%= f.submit "コメントする", class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>
 <%= render "shared/footer" %>

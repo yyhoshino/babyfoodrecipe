@@ -28,7 +28,8 @@
 
 .show-recipe-image{
   display: block;
-  height: 400px;
+  height: 500px;
+  width: 500px;
   margin: 20px auto 30px;
 }
 
@@ -158,6 +159,46 @@
 }
 
 .recipe-comments {
-  padding-top: 500px;
   background-color: bisque;
+  padding-top: 305px;
+}
+
+.btn-primary {
+  display: block;
+  height: 50%;
+  width: 50%;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 20px;
+  line-height: 50px;
+  background-color: orange;
+  margin: 20px;
+}
+
+.form-control {
+  height: 100px;
+  width: 300px;
+}
+
+.comments_list {
+  /*タイトル付き（ラベルボックス）*/
+  margin: 2em auto; /* ボックスの余白 */
+  background-color:#fff; /* ボックス背景色 */
+  padding:2em; /* ボックス内側余白 */
+  /* position:relative; 配置(ここを基準に) */
+  border: 2px solid #adc0ce;	/* ボックスの線 (太さ　種類　色)*/
+  font-family: 'Zen Kurenaido', sans-serif;
+  }
+  
+
+.comments_title {
+  background-color:#fff; /* タイトル背景色 */
+  font-size: 1em;/* タイトル文字の大きさ */
+  font-weight:800;
+  color: #adc0ce; /* タイトル文字色 */
+  padding: 0 5px;/*タイトルの余白*/
+  line-height: 1;/*タイトルの行の高さ*/
+  /* position:absolute;	配置(ここを動かす) */
+  top: -5px; /*上から（-5px）移動*/
+  left: 20px; /*左から(20px)移動*/
 }
