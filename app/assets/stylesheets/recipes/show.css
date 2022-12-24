@@ -192,11 +192,11 @@
   }
   
 
-.comments_title {
+.comments-title {
   background-color:#fff; /* タイトル背景色 */
   font-size: 1em;/* タイトル文字の大きさ */
   font-weight:800;
-  color: #adc0ce; /* タイトル文字色 */
+  color: red; /* タイトル文字色 */
   padding: 0 5px;/*タイトルの余白*/
   line-height: 1;/*タイトルの行の高さ*/
   /* position:absolute;	配置(ここを動かす) */
