@@ -14,15 +14,15 @@ has_many :favorites, dependent: :destroy
 
 ## recipes テーブル
 
-| Column             | Type       | Options                       |
-| ------------------ | ---------- | ----------------------------- |
-| dish_name          | string     | null: false                   |
-| ingredient         | text       | null: false                   |
-| make               | text       | null: false                   |
-| introduction       | text       | null: false                   |
-| user               | references | null: false, foreign_key: true|
-| moon_age_id        | integer    | null: false                   |
-| classification_id  | integer    | null: false                   |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | -----------------------------  |
+| dish_name          | string     | null: false                    |
+| ingredient         | text       | null: false                    |
+| make               | text       | null: false                    |
+| introduction       | text       | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| moon_age_id        | integer    | null: false                    |
+| classification_id  | integer    | null: false                    |
 
 ### Association
 belongs_to :user
@@ -34,6 +34,19 @@ has_many :favorites, dependent: :destroy
 | ------------------ | ------- |
 | recipe_id          | integer |
 | user_id            | integer |
+
+### Association
+belongs_to :user
+belongs_to :recipe
+
+
+## comments　テーブル
+
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| recipe             | references | null: false, foreign_key: true |
+| content            | text       | null: false                    |
 
 ### Association
 belongs_to :user
@@ -119,13 +132,20 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 
 再度、ハートマークをクリックするとお気に入りを解除できる
 
+## コメント機能
+[![Image from Gyazo](https://i.gyazo.com/e021501689b82c62411c253f1b35237c.gif)](https://gyazo.com/e021501689b82c62411c253f1b35237c)
+
+コメント入力フォームから投稿すると、コメントができるようにしています。
+
+[![Image from Gyazo](https://i.gyazo.com/3ad397273bc80fc346ea84e2faec43b1.gif)](https://gyazo.com/3ad397273bc80fc346ea84e2faec43b1)
+
+コメント削除機能は、コメントしたユーザーのみ削除ボタンが現れるように遷移しており、他のユーザーから削除されないようにしています。
 # 実装予定の機能
 お気に入り登録を非同期通信で行えるようにする予定。
-レシピにコメント機能を実装し、ユーザー同士がコミュニケーションをとれるようにする予定。
 一覧表示を分類ごとに表示させる予定。
 
 # データベース設計
-[![Image from Gyazo](https://i.gyazo.com/1c6fcc3ca16d760eac47069b0ca7ff79.png)](https://gyazo.com/1c6fcc3ca16d760eac47069b0ca7ff79)
+[![Image from Gyazo](https://i.gyazo.com/a97554675fd23b731bf09f0b9cad55b6.png)](https://gyazo.com/a97554675fd23b731bf09f0b9cad55b6)
 
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/c15a9e70d10f3a68dea0e7716a218d49.png)](https://gyazo.com/c15a9e70d10f3a68dea0e7716a218d49)
