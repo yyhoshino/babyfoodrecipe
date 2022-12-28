@@ -183,9 +183,9 @@
 
 .comments_list {
   /*タイトル付き（ラベルボックス）*/
-  margin: 2em auto; /* ボックスの余白 */
+  margin: 1em auto; /* ボックスの余白 */
   background-color:#fff; /* ボックス背景色 */
-  padding:2em; /* ボックス内側余白 */
+  padding:1em; /* ボックス内側余白 */
   /* position:relative; 配置(ここを基準に) */
   border: 2px solid #f4a460;	/* ボックスの線 (太さ　種類　色)*/
   font-family: 'Zen Kurenaido', sans-serif;
@@ -202,4 +202,12 @@
   /* position:absolute;	配置(ここを動かす) */
   top: -5px; /*上から（-5px）移動*/
   left: 20px; /*左から(20px)移動*/
+}
+.comments-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-delete {
+  color: blue;
 }

@@ -72,10 +72,16 @@
         <div class="comments-title">
         <%= comment.user.user_name %>さんの投稿
         </div>
-        <%= comment.content %>
-       <% if current_user == comment.user %>
-        <%=link_to "削除", recipe_comment_path(comment.recipe,comment), method: :delete %>
-       <% end %>
+        <div class="comments-items">
+         <div class="content">
+          <%= comment.content %>
+         </div>
+         <div class="comment-delete">
+          <% if current_user == comment.user %>
+           <%=link_to "削除", recipe_comment_path(comment.recipe,comment), method: :delete, class:"comment-delete" %>
+          <% end %>
+         </div>
+        </div>
       </div>
       <% end %>
       <%= form_with model: [@recipe, @comment], local: true do |f| %>
