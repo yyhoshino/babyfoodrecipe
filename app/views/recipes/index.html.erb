@@ -9,21 +9,7 @@
          </p>
          <p class="recipe-title">
           <%= recipe.dish_name%>
-         <% if user_signed_in? %> 
-           <% if recipe.favorited?(current_user) %>
-             <%= link_to recipe_favorites_path(recipe), method: :delete, class:"like-mark" do %>
-               <span>❤︎</span><%= recipe.favorites.count %>
-              <% end %>
-             <% else %>
-              <%= link_to recipe_favorites_path(recipe), method: :post, class:"like-mark" do %>
-               <span>❤️</span><%= recipe.favorites.count %>
-              <% end %>
-           <% end %>
-           <% else %>
-             <%= link_to recipe_favorites_path(recipe), method: :post, class:"like-mark" do %>
-               <span>❤️</span><%= recipe.favorites.count %>
-              <% end %>
-          <% end %> 
+         <%= render "favorites/favorites", recipe: recipe %>
          </p>
        </div>
      <% end %>
