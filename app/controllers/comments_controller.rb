@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-before_action :authenticate_user!, except: [:index]
+before_action :authenticate_user!, only: [:create, :destroy]
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = Comment.new(comment_params)
