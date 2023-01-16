@@ -84,13 +84,11 @@
         </div>
       </div>
       <% end %>
-      <%if current_user %>
       <%= form_with model: [@recipe, @comment], local: true do |f| %>
       <div class = 'form-group'>
         <%= f.text_area :content, class: "form-control", id:"comment_content", placeholder: "コメントを記入してください" %>
       </div>
         <%= f.submit "コメントする", class: "btn btn-primary" , id: "submit" %>
-      <% end %>
       <% end %>
   </div>
 </div>
