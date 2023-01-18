@@ -158,10 +158,10 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 ・タスク管理  
 
 # ローカルでの動作方法
-以下のコマンドを順に実行
-% git clone https://github.com/yyhoshino/babyfoodrecipe.git
-% cd babyfoodrecipe
-% bundlie install
+以下のコマンドを順に実行  
+% git clone https://github.com/yyhoshino/babyfoodrecipe.git  
+% cd babyfoodrecipe  
+% bundlie install  
 % yarn install
 
 # 工夫したポイント
