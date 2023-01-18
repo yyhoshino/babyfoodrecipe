@@ -9,7 +9,7 @@
 | encrypted_password | string | null: false               |
 
 ### Association
-has_many :recipes
+has_many :recipes  
 has_many :favorites, dependent: :destroy
 
 ## recipes テーブル
@@ -25,7 +25,7 @@ has_many :favorites, dependent: :destroy
 | classification_id  | integer    | null: false                    |
 
 ### Association
-belongs_to :user
+belongs_to :user  
 has_many :favorites, dependent: :destroy
 
 ## favorites テーブル
@@ -36,7 +36,7 @@ has_many :favorites, dependent: :destroy
 | user_id            | integer |
 
 ### Association
-belongs_to :user
+belongs_to :user  
 belongs_to :recipe
 
 
@@ -49,7 +49,7 @@ belongs_to :recipe
 | content            | text       | null: false                    |
 
 ### Association
-belongs_to :user
+belongs_to :user  
 belongs_to :recipe
 
 # アプリケーション名
@@ -62,10 +62,10 @@ BabyFoodRecipe
 https://babyfoodrecipe-38595.onrender.com
 
 # テスト用アカウント
-Basic認証パスワード:2222
-Basic認証ID:admin
-メールアドレス:aaa@com
-パスワード:1a1a1a
+Basic認証パスワード:2222  
+Basic認証ID:admin  
+メールアドレス:aaa@com  
+パスワード:1a1a1a  
 
 # 利用方法
 
@@ -141,7 +141,7 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 
 コメント削除機能は、コメントしたユーザーのみ削除ボタンが現れるように遷移しており、他のユーザーから削除されないようにしています。
 # 実装予定の機能
-お気に入り登録を非同期通信で行えるようにする予定。
+コメント機能、お気に入り登録を非同期通信で行えるようにする予定。  
 一覧表示を分類ごとに表示させる予定。
 
 # データベース設計
@@ -151,11 +151,11 @@ https://docs.google.com/spreadsheets/d/1ENRrVBWk2aCpJ3_kElZIKEHzQbZ5Q2DhRkbzbXpo
 [![Image from Gyazo](https://i.gyazo.com/c15a9e70d10f3a68dea0e7716a218d49.png)](https://gyazo.com/c15a9e70d10f3a68dea0e7716a218d49)
 
 # 開発環境
-・フロントエンド
-・バックエンド
-・インフラ
-・テキストエディタ
-・タスク管理
+・フロントエンド  
+・バックエンド  
+・インフラ  
+・テキストエディタ  
+・タスク管理  
 
 # ローカルでの動作方法
 以下のコマンドを順に実行
