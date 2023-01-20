@@ -67,23 +67,7 @@
     </div>
   </div>
   <div class="recipe-comments">
-      <% @comments.each do |comment| %>
-      <div class="comments_list">
-        <div class="comments-title">
-        <%= comment.user.user_name %>さんの投稿
-        </div>
-        <div class="comments-items">
-         <div class="content">
-          <%= comment.content %>
-         </div>
-         <div class="comment-delete">
-          <% if current_user == comment.user %>
-           <%=link_to "削除", recipe_comment_path(comment.recipe,comment), method: :delete, class:"comment-delete" %>
-          <% end %>
-         </div>
-        </div>
-      </div>
-      <% end %>
+    <%= render 'comments', comment: @comment %>
       <%= form_with model: [@recipe, @comment], local: true do |f| %>
       <div class = 'form-group'>
         <%= f.text_area :content, class: "form-control", id:"comment_content", placeholder: "コメントを記入してください" %>
