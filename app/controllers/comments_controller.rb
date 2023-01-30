@@ -2,12 +2,11 @@ class CommentsController < ApplicationController
 before_action :authenticate_user!, only: [:create, :destroy]
   def create
     @recipe = Recipe.find(params[:recipe_id])
+    @comments = @recipe.comments.includes(:user)
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.recipe_id = @recipe.id
-    if @comment.save
-      redirect_to recipe_path(@recipe)
-    end
+    @comment.save
   end
 
   def destroy

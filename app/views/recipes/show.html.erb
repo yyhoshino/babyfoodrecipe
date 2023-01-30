@@ -67,8 +67,8 @@
     </div>
   </div>
   <div class="recipe-comments">
-    <%= render 'comments', comment: @comment %>
-      <%= form_with model: [@recipe, @comment], local: true do |f| %>
+    <div id="comments"><%= render 'comments/comments', comment: @comment %></div>
+      <%= form_with model: [@recipe, @comment] do |f| %>
       <div class = 'form-group'>
         <%= f.text_area :content, class: "form-control", id:"comment_content", placeholder: "コメントを記入してください" %>
       </div>
