@@ -9,7 +9,7 @@
       </div>
       <div class="comment-delete">
       <% if current_user == comment.user %>
-        <%=link_to "削除", recipe_comment_path(comment.recipe,comment), method: :delete, class:"comment-delete" %>
+        <%=link_to "削除", recipe_comment_path(comment.recipe,comment), method: :delete, remote: true, class:"comment-delete" %>
       <% end %>
       </div>
     </div>

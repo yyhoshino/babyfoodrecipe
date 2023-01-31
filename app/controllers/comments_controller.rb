@@ -12,9 +12,8 @@ before_action :authenticate_user!, only: [:create, :destroy]
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_comments = @recipe.comments
-    if Comment.find_by(id: params[:id], recipe_id: params[:recipe_id]).destroy
-      redirect_to recipe_path(@recipe)
-    end
+    @comments = @recipe.comments.includes(:user)
+    Comment.find_by(id: params[:id], recipe_id: params[:recipe_id]).destroy
   end
 
   private
